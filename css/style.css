@@ -1,14 +1,47 @@
 @import url("photographer.css");
 
+
 body {
     font-family: "DM Sans", sans-serif;
     margin: 0;
+    min-width: 1080px;
+}
+
+.focus-photographer{
+    display: flex;   
+    flex-direction: column;
+    align-items: center;
 }
 
 .picture-photographer {
     object-fit: cover;
     border-radius: 100%;
 }
+
+.city-photographer{
+    color: #901C1C;    
+}
+
+.tagline-photographer{
+    font-size: 12px;
+}
+
+.price-photographer{
+    color: grey;
+    font-size: 12px;
+}
+
+h2 {
+    margin: 20px 0px 0px 0px;
+}
+
+.informations-photographer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 
 header {
     display: flex;
