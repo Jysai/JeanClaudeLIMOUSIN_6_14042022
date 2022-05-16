@@ -1,3 +1,6 @@
+let urlParams = new URLSearchParams(location.search);
+let idPhotographer = urlParams.get("id");
+
 function photographerFactory(data) {
     const { name, city, price, id, country, tagline, portrait } = data;
 
@@ -5,10 +8,6 @@ function photographerFactory(data) {
 
     function getUserCardDOM() {
         const article = document.createElement( 'article' );
-        // const img = document.createElement( 'img' );
-        // img.setAttribute("src", picture)
-        // const h2 = document.createElement( 'h2' );
-        // h2.textContent = name;
       
         article.innerHTML = `
         <a href="photographer.html?id=${id}">
@@ -22,14 +21,54 @@ function photographerFactory(data) {
         <span class="tagline-photographer">${tagline}</span>
         <span class="price-photographer">${price}€/jour</span>
         </div>`
-
-        // article.appendChild(cityPhotographer);
-        // article.appendChild(taglinePhotographer);
-        // article.appendChild(infosPhotographer);
-        
+       
         
         return (article);
     }
-    return { name, city, picture, id, price, country,tagline, getUserCardDOM }
+
+    function getMediaCardDOM() {
+        const article = document.createElement( 'article' );
+
+        if (idPhotographer == id) {
+            
+              console.log(name);
+        }
+
+
+        article.innerHTML = ``
+
+        
+        return (article);
+    }
+
+    return { name, city, picture, id, price, country,tagline, getUserCardDOM, getMediaCardDOM}
 }
+
+function mediaFactory(data) {
+    const { id, photographerId, title, image, likes, date, price } = data;
+
+    function getMediaCardDOM() {
+        const article = document.createElement( 'article' );
+
+        if (idPhotographer == photographerId) {
+            article.innerHTML = `  
+            <h2 class="">${title}</h2> 
+            
+            <img src="" class="picture-photographer" alt="cliché du photographe">
+         
+            <h2 class="">${title}</h2>    <span>${likes}</span>
+
+
+
+
+            `
+        }
+        return (article);
+    }
+
+
+
+    return { id, photographerId, title, image, price, likes,date,price, getMediaCardDOM}
+}
+
 

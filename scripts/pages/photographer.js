@@ -1,15 +1,12 @@
-async function getMedia() {
-  // Penser à remplacer par les données récupérées dans le json
+async function getData() {
   const response = await fetch("./data/photographers.json")
-  const medias = await response.json()
+  const data = await response.json()
  
-  // et bien retourner le tableau photographers seulement une fois
 
-  return medias
-  
+  return data
 }
 
-async function displayData(medias) {
+async function displayDataMedia(medias) {                            // juste à changer le DOM pour bien afficher les clichés du photographes au bon endroit
 
   const mediaSection = document.querySelector(".photograph-header");
 
@@ -22,15 +19,28 @@ async function displayData(medias) {
   });
 }
 
+async function displayDataPhotographer(photographers) {               // juste à changer le DOM pour bien afficher les informations du photographes au bon endroit
+
+  const mediaSection = document.querySelector(".photograph-header");
+
+  photographers.forEach((photographer) => {
+    
+    const photographerMedia = photographerFactory(photographer);
+   
+    const mediaCardDOM = photographerMedia.getMediaCardDOM();
+    mediaSection.appendChild(mediaCardDOM);                                 
+  });
+}
+
+
 
 
 async function init() {
-  // Récupère les datas des photographes
   
-  const { media } = await getMedia();
+  const { media, photographers } = await getData(); 
  
-  displayData(media);
- 
+  displayDataMedia(media);
+  displayDataPhotographer(photographers)
 }
 
 init();
