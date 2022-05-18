@@ -1,10 +1,9 @@
-let urlParams = new URLSearchParams(location.search);
-let idPhotographer = urlParams.get("id");
+
 
 function photographerFactory(data) {
     const { name, city, price, id, country, tagline, portrait } = data;
 
-    const picture = `assets/photographers/${portrait}`;
+    const picture = `assets/photographers/${portrait.replace(" ", "")}`;
 
     function getUserCardDOM() {
         const article = document.createElement( 'article' );
@@ -12,7 +11,7 @@ function photographerFactory(data) {
         article.innerHTML = `
         <a href="photographer.html?id=${id}">
         <div class="focus-photographer" aria-label="accéder au profil du photographe">
-        <img src=${picture} class="picture-photographer" alt="photo de profile du photographe">
+        <img src=${picture} class="profile-photographer" alt="photo de profile du photographe">
         <h2 class="">${name}</h2>
         </div>
         <a>
@@ -23,52 +22,32 @@ function photographerFactory(data) {
         </div>`
        
         
-        return (article);
+        return article;
     }
 
     function getMediaCardDOM() {
-        const article = document.createElement( 'article' );
+        const section = document.createElement( 'section' );
 
-        if (idPhotographer == id) {
-            
-              console.log(name);
-        }
+      
+            section.innerHTML = `
+            <div class="information-photographer">
+            <span class="">${name}</span>
+            <span class="">${city}, ${country}</span>
+            <span class="">${tagline}</span>
+            </div>
+            <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+            <img src=${picture} class="profile-photographer" alt="photo de profile du photographe">`
+              
+        
 
 
-        article.innerHTML = ``
+        section.classList.add("photographer-contact")
 
         
-        return (article);
+        return section
     }
 
     return { name, city, picture, id, price, country,tagline, getUserCardDOM, getMediaCardDOM}
-}
-
-function mediaFactory(data) {
-    const { id, photographerId, title, image, likes, date, price } = data;
-
-    function getMediaCardDOM() {
-        const article = document.createElement( 'article' );
-
-        if (idPhotographer == photographerId) {
-            article.innerHTML = `  
-            <h2 class="">${title}</h2> 
-            
-            <img src="" class="picture-photographer" alt="cliché du photographe">
-         
-            <h2 class="">${title}</h2>    <span>${likes}</span>
-
-
-
-
-            `
-        }
-        return (article);
-    }
-
-
-
-    return { id, photographerId, title, image, price, likes,date,price, getMediaCardDOM}
 }
 
 

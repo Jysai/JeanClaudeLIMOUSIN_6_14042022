@@ -23,7 +23,7 @@ a:active { text-decoration: none; }
     align-items: center;
 }
 
-.picture-photographer {
+.profile-photographer {
     object-fit: cover;
     border-radius: 100%;
 }

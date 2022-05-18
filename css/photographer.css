@@ -5,7 +5,9 @@
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
+    width: 1240px;
     margin: 0 100px;
+    display: flex;
 }
 
 .contact_button {
@@ -20,6 +22,27 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+.video-photographer{
+    object-fit: cover;
+}
+
+.profile-photographer{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.photographer-contact{
+    display: flex;
+    justify-content: space-around;
+    width: 1240px;
+    align-items: center;
+}
+
+
+
 
 .modal {
     border-radius: 5px;
