@@ -2,31 +2,28 @@ function mediaFactory(data) {
   const { id, photographerId, title, image, video, likes, date, price } = data;
 
   function getMediaCardDOM() {
-    const section = document.createElement( 'section' );
+    
+    const article = document.createElement( 'article' );
 
-   
       if (image) {
-        section.innerHTML = `  
+        article.innerHTML = `  
             
         <img src="assets/${photographerId}/${image}" class="picture-photographer" alt="cliché du photographe">
-         
-        <h2 class="">${title}</h2>    <span>${likes}</span>
+        <div class="information-photo-video">
+        <span class="title-information-photo-video">${title}</span>    <span>${likes}<i class="fas fa-heart"></i></span></i>
+        </div>
 
             `;
       } else if (video) {
-        section.innerHTML = `
+        article.innerHTML = `
             <video src="assets/${photographerId}/${video}" class="video-photographer" width=350  height=300 controls ></video>
-            <h2 class="">${title}</h2>    <span>${likes}</span>`;
+            <div class="information-photo-video">
+            <span class="title-information-photo-video">${title}</span>    <span>${likes}<i class="fas fa-heart"></i></span></div>`;
       }
-       
-    
 
-   
+  
 
-    return section;
-    
-
-   
+    return article;
 
   }
 

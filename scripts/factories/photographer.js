@@ -1,5 +1,3 @@
-
-
 function photographerFactory(data) {
     const { name, city, price, id, country, tagline, portrait } = data;
 
@@ -21,29 +19,23 @@ function photographerFactory(data) {
         <span class="price-photographer">${price}€/jour</span>
         </div>`
        
-        
         return article;
     }
 
     function getMediaCardDOM() {
         const section = document.createElement( 'section' );
 
-      
             section.innerHTML = `
             <div class="information-photographer">
-            <span class="">${name}</span>
-            <span class="">${city}, ${country}</span>
-            <span class="">${tagline}</span>
+            <span class="name-information-photographer">${name}</span>
+            <span class="city-information-photographer">${city}, ${country}</span>
+            <span class="tagline-information-photographer">${tagline}</span>
             </div>
             <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
             <img src=${picture} class="profile-photographer" alt="photo de profile du photographe">`
               
-        
-
-
         section.classList.add("photographer-contact")
-
-        
+       
         return section
     }
 

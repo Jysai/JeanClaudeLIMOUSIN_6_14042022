@@ -1,12 +1,14 @@
 #contact_modal {
     display: none;
+    z-index: 1;
+    position: fixed;
 }
 
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
     width: 1240px;
-    margin: 0 100px;
+    margin: 0 auto;
     display: flex;
 }
 
@@ -41,6 +43,59 @@
     align-items: center;
 }
 
+.information-photographer{
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: space-around;
+    position: relative;
+}
+
+
+.name-information-photographer{
+    font-size: 64px;
+    color: #D3573C;
+    margin-bottom: 2px;
+}
+
+
+.city-information-photographer{
+    color: #901C1C;
+    font-size: 24px;
+    margin-bottom: 2px;
+}
+
+.tagline-information-photographer{
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.picture-photographer{
+    height: 300px;
+    width: 350px;
+    object-fit: cover;
+}
+
+.information-photo-video{
+    display: flex;
+    justify-content: space-between;
+ width: 350px;
+ color: #901C1C;
+ font-size: 24px
+}
+
+.section-media{
+    width: 1250px;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.title-information-photo-video{
+    margin-bottom: 25px;
+}
 
 
 
@@ -54,12 +109,38 @@
     justify-content: space-between;
     padding: 35px;
     margin: auto;
-}
+}contact_modal
 
 .modal header {
     justify-content: space-between;
     width: 100%;
 }
+.fa-heart{
+    margin-left: 5px ;
+}
+
+.logo{
+    height: 40px;
+}
+
+.price-like{
+    position: fixed;
+    bottom: 0px;
+    right: 200px;
+    width: 376px;
+    height: 60px;
+    border-radius: 5px 5px 0px 0px;
+    background-color: #DB8876;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 24px;
+    font-weight: bold;
+}
+/* 
+.price-like:hover{
+    display: none;
+} */
 
 .modal header img {
     cursor: pointer;
