@@ -4,29 +4,32 @@ function mediaFactory(data) {
   function getMediaCardDOM() {
     
     const article = document.createElement( 'article' );
-
+    article.setAttribute("data-id", `${id}`)
       if (image) {
         article.innerHTML = `  
             
         <img src="assets/${photographerId}/${image}" class="picture-photographer" alt="cliché du photographe">
         <div class="information-photo-video">
-        <span class="title-information-photo-video">${title}</span>    <span>${likes}<i class="fas fa-heart"></i></span></i>
+        <span class="title-information-photo-video">${title}</span>    <div><span class="likes-photographer">${likes}</span><i onclick=like(${id},${likes}) class="fas fa-heart"></i></div></div>
         </div>
 
-            `;
+            `
+            
       } else if (video) {
         article.innerHTML = `
             <video src="assets/${photographerId}/${video}" class="video-photographer" width=350  height=300 controls ></video>
             <div class="information-photo-video">
-            <span class="title-information-photo-video">${title}</span>    <span>${likes}<i class="fas fa-heart"></i></span></div>`;
+            <span class="title-information-photo-video">${title}</span>    <div><span class="likes-photographer">${likes}</span><i onclick=like(${id},${likes}) class="fas fa-heart"></i></div></div>`;
       }
 
-  
 
+      
+      
     return article;
 
   }
 
+  
 
   return {
     id,
@@ -40,3 +43,6 @@ function mediaFactory(data) {
     getMediaCardDOM,
   };
 }
+
+
+

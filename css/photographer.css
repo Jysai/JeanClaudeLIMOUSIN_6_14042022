@@ -1,8 +1,6 @@
-#contact_modal {
-    display: none;
-    z-index: 1;
-    position: fixed;
-}
+
+
+
 
 .photograph-header {
     background-color: #FAFAFA;
@@ -10,6 +8,11 @@
     width: 1240px;
     margin: 0 auto;
     display: flex;
+}
+
+#main{
+    margin: 0 auto;
+    
 }
 
 .contact_button {
@@ -99,24 +102,17 @@
 
 
 
-.modal {
-    border-radius: 5px;
-    background-color: #DB8876;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 35px;
-    margin: auto;
-}contact_modal
 
-.modal header {
-    justify-content: space-between;
-    width: 100%;
-}
+
+
+
+
 .fa-heart{
     margin-left: 5px ;
+}
+
+.fa-heart:hover{
+  cursor: pointer;
 }
 
 .logo{
@@ -142,9 +138,7 @@
     display: none;
 } */
 
-.modal header img {
-    cursor: pointer;
-}
+
 
 .modal header h2 {
     font-size: 64px;
@@ -152,29 +146,110 @@
     text-align: center;
 }
 
-form {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
+
+
+/* Modal */
+
+
+.bground{
+    display: none;
+    justify-content: center;
+    align-items: center;
 }
 
-form label {
+.bground {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.content {
+    
+    
+  
+    background: #DB8876;
+    border-radius: 10px;
+        position: relative;
     color: #312E2E;
-    font-size: 36px;
-}
-
-form div {
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: self-start;
-    margin-bottom: 26px;
+    justify-content: center;
+    align-items: center;
+    width: 669px;
+    height: 750px;
+  }
+
+  .firstName, .lastName, .email{
+width: 550px;
+height: 40px;
+  }
+
+  .message{
+    width: 550px;
+height: 200px;
+    resize: none
+  }
+
+  .close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 32px;
+    height: 32px;
+    opacity: 1;
+    cursor: pointer;
+    transform: scale(0.7);
+  }
+  .close:before,
+  .close:after {
+    position: absolute;
+    left: 15px;
+    content: " ";
+    height: 33px;
+    width: 3px;
+    background-color: #fff;
+  }
+  .close:before {
+    transform: rotate(45deg);
+  }
+  .close:after {
+    transform: rotate(-45deg);
+  }
+
+  .modal-body,
+.modal-body {
+  padding: 15px 8%;
+  margin: 15px auto;
 }
 
-form input {
-    width: 100%;
-    height: 68px;
-    border: none;
-    border-radius: 5px;
+
+
+  .btn-submit,
+.btn-close-sucess,
+.btn-signup {
+  background: #901C1C;
+  display: block;
+
+  border-radius: 5px;
+  font-size: 1rem;
+  
+  color: #fff;
+  cursor: pointer;
+  border: 0;
 }
+
+.button {
+    background: #901C1C;
+    margin-top: 0.5em;
+    padding: 1em;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  

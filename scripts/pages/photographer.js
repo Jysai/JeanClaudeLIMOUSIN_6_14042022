@@ -30,21 +30,26 @@ async function displayDataMedia(medias) {
   // const mediaSection = document.querySelector("#main");
   const mediaSection = document.querySelector('.section-media')
 
-
   medias.forEach((media) => {
+  
     
     if (idPhotographer == media.photographerId) {
     const photographerMedia = mediaFactory(media);
     
-    const mediaCardDOM = photographerMedia.getMediaCardDOM();
-    console.log(mediaCardDOM);
+    const mediaCardDOM = photographerMedia.getMediaCardDOM(media.id);
 
+
+    
+  
     mediaSection.appendChild(mediaCardDOM);
 
-
     }
+
+  
   });
 }
+
+
 
 
 
