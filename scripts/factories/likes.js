@@ -14,4 +14,8 @@ function like(id, likes) {
     likesPhotographer.textContent--;
   }
 
+  
+  
 }
+
+

@@ -82,8 +82,8 @@
 .information-photo-video{
     display: flex;
     justify-content: space-between;
- width: 350px;
- color: #901C1C;
+    width: 350px;
+     color: #901C1C;
  font-size: 24px
 }
 
@@ -94,6 +94,7 @@
     margin-top: 20px;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 50px;
 }
 
 .title-information-photo-video{
@@ -252,4 +253,144 @@ height: 200px;
     cursor: pointer;
     font-size: 16px;
   }
+
+/* Option select */
+
+select {
+  color: white;
+  cursor: pointer;
+  background: #901C1C;
+  border: none;
+  font-size: 150%;
+  padding: 0.5em;
+  padding-right: 2em;
+  padding-left: 2em;
   
+}
+
+option{
+ background: #901C1C;
+  border: none;
+  
+}
+.select-option{
+  width: 1250px;
+  margin-bottom: 50px;
+}
+
+.trier{
+  font-size: 18px;
+  font-weight: 700;
+}
+  
+
+
+/* Lightbox */
+
+
+.lightbox {
+  position: fixed;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;              
+  overflow: auto;
+  top: 0;
+  left: 0;
+}
+.lightbox-content {
+  position: relative;
+  width: 70%;
+  height: 70%;
+  margin: 5% auto;
+}
+.lightbox-content img {
+  border-radius: 7px;
+  box-shadow: 0 0 3px 0 rgba(225, 225, 225, .25);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 7px;
+  top: 45%;
+  cursor: pointer;
+}
+.lightbox-prev {
+  left: 0;
+}
+.lightbox-next {
+  right: 0;
+}
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  opacity: .8;
+}
+
+#modalLightBox{
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#modalLightBox {
+display: none;
+position: fixed;
+z-index: 1;
+left: 0;
+top: 0;
+height: 100%;
+width: 100%;
+overflow: auto;
+background-color: white;
+}
+
+
+.contentLightBox {
+  position: relative;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1050px;
+  height: 900px;
+}
+
+.media-photographer-lightbox{
+  width: 950px;
+  height: 850px;
+  object-fit: cover;
+}
+
+
+
+
+.close-light-box {
+  position: absolute;
+  right: 5px;
+  top: 25px;
+  width: 42px;
+  height: 42px;
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(0.7);
+}
+.close-light-box:before,
+.close-light-box:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 42px;
+  width: 3px;
+  background-color: #901C1C;
+}
+.close-light-box:before {
+  transform: rotate(45deg);
+}
+.close-light-box:after {
+  transform: rotate(-45deg);
+}

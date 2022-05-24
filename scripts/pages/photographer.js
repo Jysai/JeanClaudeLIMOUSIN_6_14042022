@@ -31,15 +31,23 @@ async function displayDataMedia(medias) {
   const mediaSection = document.querySelector('.section-media')
 
   medias.forEach((media) => {
-  
+
+
+
     
     if (idPhotographer == media.photographerId) {
     const photographerMedia = mediaFactory(media);
-    
+   
+
+    // totalLikes = []
+
+
+    // console.log(Array.from(media.likes).push(totalLikes));
+
+
+
     const mediaCardDOM = photographerMedia.getMediaCardDOM(media.id);
 
-
-    
   
     mediaSection.appendChild(mediaCardDOM);
 

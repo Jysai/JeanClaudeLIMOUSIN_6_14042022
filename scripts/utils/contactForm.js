@@ -6,7 +6,7 @@ function displayModal() {
 }
 
 function closeModal() {  
-    modal.style.display = "none";
+  modal.style.display = "none";
 }
 
 
@@ -136,5 +136,6 @@ BtnSubmit.addEventListener("click", function (ev) {
       lastName.removeAttribute('style')
       email.removeAttribute('style')
       message.removeAttribute('style')
+      console.log("votre message a été envoyé avec succès");
     }
   })

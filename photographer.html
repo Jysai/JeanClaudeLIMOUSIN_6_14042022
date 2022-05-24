@@ -51,21 +51,37 @@
   </div>
 
 
-  Nombre d'envies : <span class="wish-count">0</span>
+  <div id="modalLightBox" class="modalLightBox">
+    
+    <div class="contentLightBox">
+      <span class="close-light-box" onclick=closeLightBox()></span>
+      <div class="mediaLightBox"></div>
+    </div>
+
+  </div>
+
+
+  Nombre d'envies : <span id="wish-count">0</span>
 
 
 
   <main id="main">
-
+ 
 
     <div class="photograph-header">
 
     </div>
-
-
+   
 
     <div class="section-media">
-
+      <div class="select-option">
+        <span class="trier">Trier par</span>
+        <select class="select" id="select">
+          <option class="option" id="popularité">Popularité</option>
+          <option class="option" id="date">Date</option>
+          <option class="option" id="titre">Titre</option>
+        </select>
+      </div>
     </div>
     <span class="price-like">300 likes</span>
   </main>
@@ -77,6 +93,7 @@
   <script src="scripts/factories/Photographer.js"></script>
   <script src="scripts/factories/medias.js"></script>
   <script src="scripts/factories/likes.js"></script>
+  <script src="scripts/utils/lightBox.js"></script>
 
 
 </body>
