@@ -99,7 +99,7 @@ function validateEmail() {
 function validateMessage() {
   const messageErrorMsg = document.getElementById("messageErrorMsg");
   if (!message.value) {
-    messageErrorMsg.innerHTML = "un message est requis";
+    messageErrorMsg.innerHTML = "Message requis";
     messageErrorMsg.style.display = "block";
     message.style.border = "1px solid red";
     return false;

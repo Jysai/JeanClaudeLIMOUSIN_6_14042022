@@ -1,7 +1,7 @@
 function photographerFactory(data) {
     const { name, city, price, id, country, tagline, portrait } = data;
 
-    const picture = `assets/photographers/${portrait.replace(" ", "")}`;
+    const picture = `assets/photographers/${portrait}`;
 
     function getUserCardDOM() {
         const article = document.createElement( 'article' );
@@ -35,9 +35,17 @@ function photographerFactory(data) {
             <img src=${picture} class="profile-photographer" alt="photo de profile du photographe">`
               
         section.classList.add("photographer-contact")
+
+        document.querySelector('.name-photographer-contact').textContent = `${name}`    
+        document.querySelector('.price-like').textContent = `${price}`    
+        
+
        
         return section
     }
+
+   
+
 
     return { name, city, picture, id, price, country,tagline, getUserCardDOM, getMediaCardDOM}
 }

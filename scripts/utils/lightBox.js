@@ -1,5 +1,5 @@
-const modalLightBox = document.getElementById("modalLightBox");
 
+  
 function closeLightBox() {
   modalLightBox.style.display = "none";
 }
@@ -9,6 +9,8 @@ function displayImageLightBox(id) {
   const articlePhotographer = document.querySelector(
     `article[data-id="${id}"]`
   );
+
+ 
   const modalLightboxPhotographer = articlePhotographer
     .querySelector(`img`)
     .getAttribute("src");
@@ -16,8 +18,9 @@ function displayImageLightBox(id) {
   
   imageLightBox.innerHTML = `<img src="${modalLightboxPhotographer}" class="media-photographer-lightbox" alt="cliché du photographe">`
 
-  
 }
+
+
 
 function displayVideoLightBox(id) {
   modalLightBox.style.display = "flex";
@@ -31,3 +34,6 @@ function displayVideoLightBox(id) {
 
    videoLightBox.innerHTML = `<video src="${modalLightboxPhotographer}" class="media-photographer-lightbox" alt="cliché du photographe" controls>`
 }
+
+
+
