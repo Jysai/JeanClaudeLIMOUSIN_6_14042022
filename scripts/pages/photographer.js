@@ -60,23 +60,53 @@ async function displayDataMedia(medias) {
   }
 }
 
+document.querySelector("#sort-list-close").onclick = closeSortMenu;
+function closeSortMenu() {
+  document.querySelector("#sort-list-open").style.display = "block";
+}
+
+document.querySelector("#sort-list-open").onclick = openSortMenu;
+function openSortMenu() {
+  document.querySelector("#sort-list-open").style.display = "none";
+}
+
+const textChoice = document.getElementById("text-choice-change")
 const sectionMedia = document.querySelector(".section-media");
-document.getElementById("select").onchange = changeListener;
-function changeListener() {
-  let value = this.value;
+document.getElementById("popularity-btn").onclick = sortByPopularity;
+function sortByPopularity(e) {
   sectionMedia.innerHTML = "";
-  if (value == "popularite") {
-    medias.sort((a, b) => a.likes - b.likes);
-  } else if (value == "date") {
-    medias.sort((a, b) => new Date(a.date) - new Date(b.date));
-  } else if (value == "titre") {
-    medias.sort((a, b) => {
-      return a.title > b.title ? 1 : -1;
-    });
-  }
+  medias.sort((a, b) => {
+    return a.likes - b.likes;
+  });
+  textChoice.textContent = e.target.textContent;
   displayDataMedia(medias);
   displayLightBox();
 }
+
+document.getElementById("date-btn").onclick = sortByDate;
+function sortByDate(e) {
+  sectionMedia.innerHTML = "";
+  medias.sort((a, b) => {
+    return new Date(a.date) - new Date(b.date);
+  });
+  textChoice.textContent = e.target.textContent;
+  displayDataMedia(medias);
+  displayLightBox();
+}
+
+
+document.getElementById("title-btn").onclick = sortByTitle;
+function sortByTitle(e) {
+  sectionMedia.innerHTML = "";
+    medias.sort((a, b) => {
+      return a.title > b.title ? 1 : -1;
+    });
+  textChoice.textContent = e.target.textContent;
+  displayDataMedia(medias);
+  displayLightBox();
+}
+
+
 
 function like(id, likes) {
   const articlePhotographer = document.querySelector(
@@ -103,7 +133,6 @@ function like(id, likes) {
 async function init() {
   const { photographers } = await getPhotographers();
   const { medias } = await getMedia();
-  console.log(medias);
 
   displayDataMedia(medias);
   displayDataPhotographer(photographers);

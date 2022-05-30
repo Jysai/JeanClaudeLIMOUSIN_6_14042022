@@ -21,9 +21,7 @@ async function displayLightBox() {
     ).innerHTML;
     arrayPictur.push(srcPicturesPhotographer);
     arrayTitle.push(titlePicturePhotographer);
-  }
 
-  for (let index = 0; index < articlesPhotographer.length; index++) {
     const articleDataID = articlesPhotographer[index].getAttribute("data-id");
 
     const articlePhotographer = document.querySelector(
@@ -50,7 +48,7 @@ async function displayLightBox() {
       let indexTitle = arrayTitle.findIndex(
         (title) => title === titleModalLightBox
       );
-      console.log(indexTitle);
+
 
       if (srcForModalLightBox.includes("jpg")) {
         imageLightBox.innerHTML = `<img src="${srcForModalLightBox}" class="media-photographer-lightbox" alt="cliché du photographe">`;

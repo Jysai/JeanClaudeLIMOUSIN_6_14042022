@@ -121,12 +121,18 @@ BtnSubmit.addEventListener("click", function (ev) {
   let validMessage = validateMessage();
 
   if (validFirstname && validLastname && validEmail && validMessage) {
+    console.log("Prénom: " + firstName.value);
+    console.log("Nom: " + lastName.value);
+    console.log("Email: " + email.value);
+    console.log("Message: " + message.value);
+
+
     modal.style.display = "none";
     formReset.reset();
     firstName.removeAttribute("style");
     lastName.removeAttribute("style");
     email.removeAttribute("style");
     message.removeAttribute("style");
-    console.log("votre message a été envoyé avec succès");
+  
   }
 });

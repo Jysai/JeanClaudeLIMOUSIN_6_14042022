@@ -74,20 +74,44 @@
     <div class="photograph-header">
     </div>
 
-    <div class="select-option">
-      <span class="trier">Trier par</span>
-      <select class="select" id="select">
-        <option class="option" id="popularite" value="popularite">Popularité</option>
-        <option class="option" id="date" value="date">Date</option>
-        <option class="option" id="titre" value="titre">Titre</option>
-      </select>
+
+
+    <div class="select-option ">
+      <span id="sort-text">Triez-par</span>
+      <button tabindex="1" id="sort-list-close" class="popularity-btn" >
+        <span id="selected-filter">
+          <span id="text-choice">
+            <span id="text-choice-change">Date</span>
+            <span><i class="fas fa-chevron-down"></i></span>
+          </span>
+        </span>
+      </button>
+      <nav id="sort-list-open" class="popularity-btn popularity-btn-opened" >
+        <ul>
+          <li class="sort-by">
+            <button tabindex="1" id="popularity-btn" class="sort-by-popu" data-order="popularity" value="popularite">
+              Popularité
+            </button>
+          </li>
+          <li class="sort-by">
+            <button tabindex="1" id="date-btn" class="sort-by-date" data-order="date" value="date">
+              Date
+            </button>
+          </li>
+          <li class="sort-by">
+            <button tabindex="1" id="title-btn" class="sort-by-title" data-order="title" value="titre">
+              Titre
+            </button>
+          </li>
+        </ul>
+      </nav>
     </div>
 
     <div class="section-media">
     </div>
     <div class="price-like-photographer">
       <div class="information-like-photographer">
-        <span id="wish-count"></span><i class="fas fa-heart"></i>
+        <span id="wish-count"></span><i class="fas fa-heart total-like-heart"></i>
       </div>
       <div class="information-price-photographer">
         <span class="price-like"></span><span>€ / jour</span>

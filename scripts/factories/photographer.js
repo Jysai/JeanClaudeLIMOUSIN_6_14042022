@@ -24,7 +24,7 @@ function photographerFactory(data) {
 
   function getMediaCardDOM() {
     const section = document.createElement("section");
-    // if (idPhotographer == id) {
+ 
     section.innerHTML = `
             <div class="information-photographer">
             <span class="name-information-photographer">${name}</span>
@@ -40,8 +40,7 @@ function photographerFactory(data) {
       ".name-photographer-contact"
     ).textContent = `${name}`;
     document.querySelector(".price-like").textContent = `${price}`;
-
-    // }
+ 
 
     return section;
   }
