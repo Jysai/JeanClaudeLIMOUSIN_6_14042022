@@ -1,12 +1,12 @@
 function photographerFactory(data) {
-    const { name, city, price, id, country, tagline, portrait } = data;
+  const { name, city, price, id, country, tagline, portrait } = data;
 
-    const picture = `assets/photographers/${portrait}`;
+  const picture = `assets/photographers/${portrait}`;
 
-    function getUserCardDOM() {
-        const article = document.createElement( 'article' );
-      
-        article.innerHTML = `
+  function getUserCardDOM() {
+    const article = document.createElement("article");
+
+    article.innerHTML = `
         <a href="photographer.html?id=${id}">
         <div class="focus-photographer" aria-label="accéder au profil du photographe">
         <img src=${picture} class="profile-photographer" alt="photo de profile du photographe">
@@ -17,37 +17,34 @@ function photographerFactory(data) {
         <span class="city-photographer">${city}, ${country} </span>
         <span class="tagline-photographer">${tagline}</span>
         <span class="price-photographer">${price}€/jour</span>
-        </div>`
-       
-        return article;
-    }
+        </div>`;
 
-    function getMediaCardDOM() {
-        const section = document.createElement( 'section' );
+    return article;
+  }
 
-            section.innerHTML = `
+  function getMediaCardDOM() {
+    const section = document.createElement("section");
+    // if (idPhotographer == id) {
+    section.innerHTML = `
             <div class="information-photographer">
             <span class="name-information-photographer">${name}</span>
             <span class="city-information-photographer">${city}, ${country}</span>
             <span class="tagline-information-photographer">${tagline}</span>
             </div>
             <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-            <img src=${picture} class="profile-photographer" alt="photo de profile du photographe">`
-              
-        section.classList.add("photographer-contact")
+            <img src=${picture} class="profile-photographer" alt="photo de profile du photographe">`;
 
-        document.querySelector('.name-photographer-contact').textContent = `${name}`    
-        document.querySelector('.price-like').textContent = `${price}`    
-        
+    section.classList.add("photographer-contact");
 
-       
-        return section
-    }
+    document.querySelector(
+      ".name-photographer-contact"
+    ).textContent = `${name}`;
+    document.querySelector(".price-like").textContent = `${price}`;
 
-   
+    // }
 
+    return section;
+  }
 
-    return { name, city, picture, id, price, country,tagline, getUserCardDOM, getMediaCardDOM}
+  return { getUserCardDOM, getMediaCardDOM };
 }
-
-

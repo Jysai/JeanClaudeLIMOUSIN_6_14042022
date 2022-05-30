@@ -62,23 +62,16 @@
   font-size: 18px;
 }
 
-.picture-photographer {
+.cliche-photographer {
   height: 300px;
   width: 350px;
   object-fit: cover;
 }
 
-.picture-photographer:hover {
+.cliche-photographer:hover {
   cursor: zoom-in;
 }
 
-.video-photographer {
-  object-fit: cover;
-}
-
-.video-photographer:hover {
-  cursor: zoom-in;
-}
 
 .information-photo-video {
   display: flex;
@@ -382,9 +375,10 @@ option {
   top: 25px;
   width: 42px;
   height: 42px;
+  font-size: 50px;
   opacity: 1;
   cursor: pointer;
-  transform: scale(0.7);
+ 
 }
 .close-light-box:before,
 .close-light-box:after {
@@ -401,3 +395,25 @@ option {
 .close-light-box:after {
   transform: rotate(-45deg);
 }
+
+
+.title-picture-modal{
+position: absolute;
+right: 733px;
+bottom: -40px;
+font-size: 24px;
+color: #901C1C
+}
+
+.stop-scrolling {
+
+  height: 100%;
+  
+  overflow: hidden;
+  
+  }
+
+  .fa-chevron-left, .fa-chevron-right{
+    font-size: 50px;
+    color: #901C1C
+  }

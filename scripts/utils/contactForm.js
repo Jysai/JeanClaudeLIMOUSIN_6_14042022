@@ -1,19 +1,17 @@
 const modal = document.getElementById("bground");
 
-
-function displayModal() { 
-	modal.style.display = "flex"; 
+function displayModal() {
+  modal.style.display = "flex";
 }
 
-function closeModal() {  
+function closeModal() {
   modal.style.display = "none";
 }
-
 
 const firstName = document.querySelector("#firstName");
 const lastName = document.querySelector("#lastName");
 const email = document.querySelector("#email");
-const message = document.querySelector("#message")
+const message = document.querySelector("#message");
 
 const formReset = document.querySelector(".reserve");
 
@@ -95,7 +93,6 @@ function validateEmail() {
   }
 }
 
-
 function validateMessage() {
   const messageErrorMsg = document.getElementById("messageErrorMsg");
   if (!message.value) {
@@ -108,34 +105,28 @@ function validateMessage() {
     messageErrorMsg.style.display = "block";
     message.style.border = "1px solid red";
     return false;
-  }  else {
+  } else {
     messageErrorMsg.style.display = "none";
     message.style.border = "1px solid green";
     return true;
   }
 }
 
-
 BtnSubmit.addEventListener("click", function (ev) {
-    ev.preventDefault();
-  
-    let validFirstname = validateFirstName();
-    let validLastname = validateLastName();
-    let validEmail = validateEmail();
-    let validMessage = validateMessage()
-  
-    if (
-      validFirstname &&
-      validLastname &&
-      validEmail && 
-      validMessage
-    ) {
-      modal.style.display = "none";
-      formReset.reset();
-      firstName.removeAttribute('style')
-      lastName.removeAttribute('style')
-      email.removeAttribute('style')
-      message.removeAttribute('style')
-      console.log("votre message a été envoyé avec succès");
-    }
-  })
+  ev.preventDefault();
+
+  let validFirstname = validateFirstName();
+  let validLastname = validateLastName();
+  let validEmail = validateEmail();
+  let validMessage = validateMessage();
+
+  if (validFirstname && validLastname && validEmail && validMessage) {
+    modal.style.display = "none";
+    formReset.reset();
+    firstName.removeAttribute("style");
+    lastName.removeAttribute("style");
+    email.removeAttribute("style");
+    message.removeAttribute("style");
+    console.log("votre message a été envoyé avec succès");
+  }
+});

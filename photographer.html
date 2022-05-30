@@ -21,13 +21,12 @@
   <div id="bground" class="bground">
 
     <div class="content ">
-      
 
       <form name="reserve" class="reserve" method="get">
-        <div class="header-contact" >
+        <div class="header-contact">
           <span class="close" onclick=closeModal()></span>
-        <h2 class="contact-me">Contactez-moi</h2>
-        <h2 class="name-photographer-contact"></h2>
+          <h2 class="contact-me">Contactez-moi</h2>
+          <h2 class="name-photographer-contact"></h2>
         </div>
         <div>
           <label for="firstName">Prénom</label><br>
@@ -55,38 +54,36 @@
 
   </div>
 
-
   <div id="modalLightBox" class="modalLightBox">
 
     <div class="contentLightBox">
-      <span class="close-light-box" onclick=closeLightBox()></span>
+
+      <i class="fas solid fa-xmark close-light-box" onclick=closeLightBox()></i>
+      <i class="fas   fa-chevron-left" id="left-btn"></i>
+
       <div class="mediaLightBox"></div>
+      <i class="fas   fa-chevron-right" id="right-btn"></i>
+
+      <h3 class="title-picture-modal">Test</h3>
     </div>
 
   </div>
 
-
-
-
-
-
   <main id="main">
 
-
     <div class="photograph-header">
-
     </div>
 
+    <div class="select-option">
+      <span class="trier">Trier par</span>
+      <select class="select" id="select">
+        <option class="option" id="popularite" value="popularite">Popularité</option>
+        <option class="option" id="date" value="date">Date</option>
+        <option class="option" id="titre" value="titre">Titre</option>
+      </select>
+    </div>
 
     <div class="section-media">
-      <div class="select-option">
-        <span class="trier">Trier par</span>
-        <select class="select" id="select">
-          <option class="option" id="popularité">Popularité</option>
-          <option class="option" id="date">Date</option>
-          <option class="option" id="titre">Titre</option>
-        </select>
-      </div>
     </div>
     <div class="price-like-photographer">
       <div class="information-like-photographer">
@@ -98,7 +95,6 @@
     </div>
   </main>
 
-
   <script src="scripts/utils/contactForm.js"></script>
   <script src="scripts/pages/photographer.js"></script>
 
@@ -106,8 +102,6 @@
   <script src="scripts/factories/medias.js"></script>
 
   <script src="scripts/utils/lightBox.js"></script>
-
-
 
 </body>
 
