@@ -49,7 +49,6 @@ async function displayLightBox() {
         (title) => title === titleModalLightBox
       );
 
-
       if (srcForModalLightBox.includes("jpg")) {
         imageLightBox.innerHTML = `<img src="${srcForModalLightBox}" class="media-photographer-lightbox" alt="cliché du photographe">`;
       } else {
@@ -61,15 +60,16 @@ async function displayLightBox() {
         if (indexUrl >= arrayPictur.length - 1) {
           indexUrl = 0;
           indexTitle = 0;
+
           if (arrayPictur[indexUrl].includes("mp4")) {
             imageLightBox.innerHTML = `<video src="${arrayPictur[indexUrl]}" class="media-photographer-lightbox" alt="cliché du photographe" controls>`;
           } else {
             imageLightBox.innerHTML = `<img src="${arrayPictur[indexUrl]}" class="media-photographer-lightbox" alt="cliché du photographe">`;
           }
           titleLightBox.innerHTML = `${arrayTitle[indexTitle]}`;
+
           return;
         }
-
         if (arrayPictur[indexUrl + 1].includes("mp4")) {
           imageLightBox.innerHTML = `<video src="${
             arrayPictur[indexUrl + 1]
@@ -112,6 +112,15 @@ async function displayLightBox() {
       document.body.classList.add("stop-scrolling");
       leftBtn.addEventListener("click", slideLeft);
       rightBtn.addEventListener("click", slideRight);
+      document.addEventListener("keyup", function (e) {
+        if (e.key === "ArrowLeft") {
+          slideLeft();
+        } else if (e.key === "ArrowRight") {
+          slideRight();
+        } else if (e.key === "Escape") {
+          closeLightBox();
+        }
+      });
     }
   }
 }

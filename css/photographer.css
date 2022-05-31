@@ -1,3 +1,8 @@
+*{
+  font-family: 'DM Sans', sans-serif;
+}
+
+
 .photograph-header {
   background-color: #fafafa;
   height: 300px;
@@ -21,6 +26,10 @@
   background-color: #901c1c;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.contact_button:hover{
+  background-color: #DB8876
 }
 
 .profile-photographer {
@@ -174,7 +183,7 @@ label {
   justify-content: center;
   align-items: center;
   width: 620px;
-  height: 760px;
+  height: 800px;
 }
 
 .firstName,
@@ -253,6 +262,8 @@ label {
   font-size: 16px;
 }
 
+
+
 .far, .fas{
   cursor: pointer;
 }
@@ -266,7 +277,7 @@ label {
 #sort-list-open{
   top: 0px;
   position: absolute;
-  left: 61px;
+  left: 71px;
 }
 
 #sort-list-open li {
@@ -290,7 +301,7 @@ label {
   
 }
 
-header{
+.header-photographer{
   width: 1240px;
     margin: 0 auto;
 }

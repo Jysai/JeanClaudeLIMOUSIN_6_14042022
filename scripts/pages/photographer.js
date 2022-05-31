@@ -72,11 +72,12 @@ function openSortMenu() {
 
 const textChoice = document.getElementById("text-choice-change")
 const sectionMedia = document.querySelector(".section-media");
+
 document.getElementById("popularity-btn").onclick = sortByPopularity;
 function sortByPopularity(e) {
   sectionMedia.innerHTML = "";
   medias.sort((a, b) => {
-    return a.likes - b.likes;
+    return b.likes - a.likes;
   });
   textChoice.textContent = e.target.textContent;
   displayDataMedia(medias);
@@ -106,7 +107,11 @@ function sortByTitle(e) {
   displayLightBox();
 }
 
-
+window.onclick = (e) => {
+  if (!e.target.closest("#sort-list-close") ) {
+    document.querySelector("#sort-list-open").style.display = "none"
+  }
+}
 
 function like(id, likes) {
   const articlePhotographer = document.querySelector(
