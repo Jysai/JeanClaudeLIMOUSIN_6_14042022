@@ -15,41 +15,41 @@
 <body>
 
   <header class="header-photographer">
-    <a href="/"><img src="assets/images/logo.png" class="logo" /></a>
+    <a href="/"><img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" /></a>
 
   </header>
 
-  <div id="bground" class="bground">
+  <div id="bground" class="bground" >
 
-    <div class="content ">
+    <div class="content " >
 
       <form name="reserve" class="reserve" method="get">
         <div class="header-contact">
-          <span class="close" onclick=closeModal()></span>
+          <span class="close" onclick=closeModal() alt="Close contact form"></span>
           <h2 class="contact-me">Contactez-moi</h2>
           <h2 class="name-photographer-contact"></h2>
         </div>
         <div>
           <label for="firstName">Prénom</label><br>
-          <input class="firstName" id="firstName" type="text" />
+          <input class="firstName" id="firstName" type="text" Role=Input alt="firstName"/>
           <p id="firstNameErrorMsg"></p>
         </div>
         <div>
           <label for="lastName">Nom</label><br>
-          <input class="lastName" id="lastName" type="text" />
+          <input class="lastName" id="lastName" type="text" Role=Input alt="lastname" />
           <p id="lastNameErrorMsg"></p>
         </div>
         <div>
           <label for="email">E-mail</label><br>
-          <input class="email" id="email" type="email" />
+          <input class="email" id="email" type="email" Role=Input alt="email" />
           <p id="emailErrorMsg"></p>
         </div>
         <div>
           <label for="message">Votre message</label><br>
-          <textarea class="message" id="message" type="text-area"></textarea>
+          <textarea class="message" id="message" type="text-area" Role=Input alt="Your message"> </textarea>
           <p id="messageErrorMsg"></p>
         </div>
-        <input class="btn-submit button" type="submit" id="btn-submit" value="Envoyer" />
+        <input class="btn-submit button" type="submit" id="btn-submit" value="Envoyer" alt="send" />
       </form>
     </div>
 
@@ -57,13 +57,13 @@
 
   <div id="modalLightBox" class="modalLightBox">
 
-    <div class="contentLightBox">
+    <div class="contentLightBox" aria-label="image closeup view">
 
-      <i class="fas solid fa-xmark close-light-box" onclick=closeLightBox()></i>
-      <i class="fas   fa-chevron-left" id="left-btn"></i>
+      <i class="fas solid fa-xmark close-light-box" onclick=closeLightBox() alt="close dialog"></i>
+      <i class="fas fa-chevron-left" id="left-btn" alt="previous img" ></i>
 
       <div class="mediaLightBox"></div>
-      <i class="fas   fa-chevron-right" id="right-btn"></i>
+      <i class="fas fa-chevron-right" id="right-btn" alt="next img"></i>
 
       <h3 class="title-picture-modal">Test</h3>
     </div>
@@ -79,7 +79,7 @@
 
     <div class="select-option ">
       <span id="sort-text">Triez-par</span>
-      <button tabindex="1" id="sort-list-close" class="popularity-btn" >
+      <button tabindex="1" id="sort-list-close" class="popularity-btn" role="listbox" aria-haspopup=”listbox”>
         <span id="selected-filter">
           <span id="text-choice">
             <span id="text-choice-change">Date</span>
@@ -87,20 +87,20 @@
           </span>
         </span>
       </button>
-      <nav id="sort-list-open" class="popularity-btn popularity-btn-opened" >
+      <nav id="sort-list-open" class="popularity-btn popularity-btn-opened" aria-labelledby="select-sort">
         <ul>
           <li class="sort-by">
-            <button tabindex="1" id="popularity-btn" class="sort-by-popu" data-order="popularity" value="popularite">
+            <button tabindex="1" id="popularity-btn" class="sort-by-popu" data-order="popularity" value="popularite" role=”button”>
               Popularité
             </button>
           </li>
           <li class="sort-by">
-            <button tabindex="1" id="date-btn" class="sort-by-date" data-order="date" value="date">
+            <button tabindex="1" id="date-btn" class="sort-by-date" data-order="date" value="date" role=”button” >
               Date
             </button>
           </li>
           <li class="sort-by">
-            <button tabindex="1" id="title-btn" class="sort-by-title" data-order="title" value="titre">
+            <button tabindex="1" id="title-btn" class="sort-by-title" data-order="title" value="titre" role=”button” >
               Titre
             </button>
           </li>
@@ -108,7 +108,7 @@
       </nav>
     </div>
 
-    <div class="section-media">
+    <section class="section-media">
     </div>
     <div class="price-like-photographer">
       <div class="information-like-photographer">
@@ -117,7 +117,7 @@
       <div class="information-price-photographer">
         <span class="price-like"></span><span>€ / jour</span>
       </div>
-    </div>
+    </section>
   </main>
 
   <script src="scripts/utils/contactForm.js"></script>

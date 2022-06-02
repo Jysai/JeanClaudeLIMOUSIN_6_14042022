@@ -9,7 +9,7 @@ function photographerFactory(data) {
     article.innerHTML = `
         <a href="photographer.html?id=${id}">
         <div class="focus-photographer" aria-label="accéder au profil du photographe">
-        <img src=${picture} class="profile-photographer" alt="photo de profile du photographe">
+        <img src=${picture} class="profile-photographer" alt="${name}">
         <h2 class="">${name}</h2>
         </div>
         <a>
@@ -27,12 +27,12 @@ function photographerFactory(data) {
  
     section.innerHTML = `
             <div class="information-photographer">
-            <span class="name-information-photographer">${name}</span>
+            <h2 class="name-information-photographer">${name}</h2>
             <span class="city-information-photographer">${city}, ${country}</span>
             <span class="tagline-information-photographer">${tagline}</span>
             </div>
-            <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-            <img src=${picture} class="profile-photographer" alt="photo de profile du photographe">`;
+            <button class="contact_button" onclick="displayModal()" alt="Contact Me">Contactez-moi</button>
+            <img src=${picture} class="profile-photographer" alt="${name}">`;
 
     section.classList.add("photographer-contact");
 
@@ -41,6 +41,10 @@ function photographerFactory(data) {
     ).textContent = `${name}`;
     document.querySelector(".price-like").textContent = `${price}`;
  
+    document.querySelector(
+      ".content"
+    ).setAttribute("alt", `contact me ${name}`)
+
 
     return section;
   }
