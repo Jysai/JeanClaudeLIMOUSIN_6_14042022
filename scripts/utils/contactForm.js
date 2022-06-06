@@ -1,12 +1,28 @@
 const modal = document.getElementById("bground");
 
+
+
+
+// eslint-disable-next-line no-unused-vars
 function displayModal() {
   modal.style.display = "flex";
 }
 
+
+
+// eslint-disable-next-line no-unused-vars
 function closeModal() {
   modal.style.display = "none";
 }
+
+document.addEventListener("keyup", function (e) {
+  if (e.key === "Escape") {
+    closeModal()
+    }
+  });
+
+
+
 
 const firstName = document.querySelector("#firstName");
 const lastName = document.querySelector("#lastName");
@@ -19,7 +35,7 @@ const BtnSubmit = document.getElementById("btn-submit");
 
 const regName =
   /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/;
-const regEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+const regEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 
 // Fonction avec plusieurs conditions qui permet de vérifier si le champ prénom est rempli correctement
 function validateFirstName() {
@@ -111,6 +127,7 @@ function validateMessage() {
     return true;
   }
 }
+
 
 BtnSubmit.addEventListener("click", function (ev) {
   ev.preventDefault();

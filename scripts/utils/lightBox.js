@@ -1,5 +1,6 @@
 const imageLightBox = document.querySelector(".mediaLightBox");
 const titleLightBox = document.querySelector(".title-picture-modal");
+const modalLightBox = document.querySelector(".modalLightBox");
 
 function closeLightBox() {
   document.body.classList.remove("stop-scrolling");
@@ -10,59 +11,62 @@ async function displayLightBox() {
   const rightBtn = document.getElementById("right-btn");
   const leftBtn = document.getElementById("left-btn");
 
-  arrayTitle = [];
-  arrayPictur = [];
+  const arrayTitle = [];
+  const arrayPictur = [];
 
-  for (let index = 0; index < articlesPhotographer.length; index++) {
-    const srcPicturesPhotographer = articlesPhotographer[index]
+  articlesPhotographer.forEach((articlePhotographer) => {
+    const srcPicturesPhotographer = articlePhotographer
       .querySelector(".cliche-photographer")
       .getAttribute("src");
-    const titlePicturePhotographer = articlesPhotographer[index].querySelector(
+    const titlePicturePhotographer = articlePhotographer.querySelector(
       ".title-information-photo-video"
     ).innerHTML;
-
- 
 
     arrayPictur.push(srcPicturesPhotographer);
     arrayTitle.push(titlePicturePhotographer);
 
+    const articleDataID = articlePhotographer.getAttribute("data-id");
 
-    const articleDataID = articlesPhotographer[index].getAttribute("data-id");
-
-    const articlePhotographer = document.querySelector(
+    const getIdArticlePhotographer = document.querySelector(
       `article[data-id="${articleDataID}"]`
     );
-
-   
 
     const srcForModalLightBox = articlePhotographer
       .querySelector(`.cliche-photographer`)
       .getAttribute("src");
 
-    const titleModalLightBox = articlesPhotographer[index].querySelector(
+    const titleModalLightBox = articlePhotographer.querySelector(
       ".title-information-photo-video"
     ).innerHTML;
 
+    const input =
+      getIdArticlePhotographer.querySelector(`.cliche-photographer`);
+    input.addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        displayModalLightBox();
+      }
+    });
 
+    getIdArticlePhotographer
+      .querySelector(`.cliche-photographer`)
+      .addEventListener("click", displayModalLightBox);
 
-    document
-      .querySelector(`article[data-id="${articleDataID}"]`)
-      .querySelector(`.cliche-photographer`).onclick = displayModalLightBox;
     function displayModalLightBox() {
       modalLightBox.style.display = "flex";
 
       let indexUrl = arrayPictur.findIndex(
         (image) => image === srcForModalLightBox
       );
+
       let indexTitle = arrayTitle.findIndex(
         (title) => title === titleModalLightBox
       );
 
-
       if (srcForModalLightBox.includes("jpg")) {
         imageLightBox.innerHTML = `<img src="${srcForModalLightBox}" class="media-photographer-lightbox" alt="${titleModalLightBox}">`;
       } else {
-        imageLightBox.innerHTML = `<video src="${srcForModalLightBox}" class="media-photographer-lightbox" alt="${titleModalLightBox} controls>`;
+        console.log(srcForModalLightBox);
+        imageLightBox.innerHTML = `<video src="${srcForModalLightBox}" class="media-photographer-lightbox" alt="${titleModalLightBox}" controls>`;
       }
       titleLightBox.innerHTML = `${titleModalLightBox}`;
 
@@ -70,7 +74,6 @@ async function displayLightBox() {
         if (indexUrl >= arrayPictur.length - 1) {
           indexUrl = 0;
           indexTitle = 0;
-        
 
           if (arrayPictur[indexUrl].includes("mp4")) {
             imageLightBox.innerHTML = `<video src="${arrayPictur[indexUrl]}" class="media-photographer-lightbox" alt="${arrayTitle[indexTitle]}" controls>`;
@@ -78,23 +81,26 @@ async function displayLightBox() {
             imageLightBox.innerHTML = `<img src="${arrayPictur[indexUrl]}" class="media-photographer-lightbox" alt="${arrayTitle[indexTitle]}">`;
           }
           titleLightBox.innerHTML = `${arrayTitle[indexTitle]}`;
-          
+
           return;
         }
         if (arrayPictur[indexUrl + 1].includes("mp4")) {
           imageLightBox.innerHTML = `<video src="${
             arrayPictur[indexUrl + 1]
-          }" class="media-photographer-lightbox"  alt="${arrayTitle[indexTitle + 1]}" controls>`;
+          }" class="media-photographer-lightbox"  alt="${
+            arrayTitle[indexTitle + 1]
+          }" controls>`;
         } else {
           imageLightBox.innerHTML = `<img src="${
             arrayPictur[indexUrl + 1]
-          }" class="media-photographer-lightbox"  alt="${arrayTitle[indexTitle + 1]}">`;
+          }" class="media-photographer-lightbox"  alt="${
+            arrayTitle[indexTitle + 1]
+          }">`;
         }
         titleLightBox.innerHTML = `${arrayTitle[indexTitle + 1]}`;
-        
+
         indexUrl++;
         indexTitle++;
-  
       }
 
       function slideLeft() {
@@ -112,11 +118,15 @@ async function displayLightBox() {
         if (arrayPictur[indexUrl - 1].includes("mp4")) {
           imageLightBox.innerHTML = `<video src="${
             arrayPictur[indexUrl - 1]
-          }" class="media-photographer-lightbox" alt="${arrayTitle[indexTitle - 1]}" controls>`;
+          }" class="media-photographer-lightbox" alt="${
+            arrayTitle[indexTitle - 1]
+          }" controls>`;
         } else {
           imageLightBox.innerHTML = `<img src="${
             arrayPictur[indexUrl - 1]
-          }" class="media-photographer-lightbox" alt="${arrayTitle[indexTitle - 1]}">`;
+          }" class="media-photographer-lightbox" alt="${
+            arrayTitle[indexTitle - 1]
+          }">`;
         }
         titleLightBox.innerHTML = `${arrayTitle[indexTitle - 1]}`;
         indexUrl--;
@@ -135,5 +145,6 @@ async function displayLightBox() {
         }
       });
     }
-  }
+  });
 }
+displayLightBox();

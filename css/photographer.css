@@ -94,7 +94,7 @@
   display: flex;
   margin: 0 auto;
   margin-top: 20px;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 50px;
 }
@@ -106,8 +106,14 @@
 
 .logo {
   height: 40px;
+  
 }
 
+.logo-media{
+  margin-top: 20px;
+  margin-bottom: 35px;
+  width: 250px;
+}
 .price-like-photographer {
   position: fixed;
   bottom: 0px;
@@ -275,22 +281,32 @@ label {
 
 /* Option select */
 
+
+
 #sort-list-open{
   top: 0px;
   position: absolute;
   left: 71px;
+  padding-top: 0;
 }
 
-#sort-list-open li {
-  border-top: 1px solid white;
+.fa-chevron-down{
+  position: relative;
+   
+    top: 4px;
 }
 
-#sort-list-open li:first-child {
+.fa-chevron-up{
+  position: relative;
+  left: 138px;
+  top: 27px;
+}
+#sort-list-open button:first-child {
   border-top: none;
 }
 
 .popularity-btn {
-  width: 200px;
+  width: 156px;
   color: white;
   padding: 16px;
 
@@ -299,7 +315,7 @@ label {
   background-color: #901c1c;
   border-style: none;
   border-radius: 5px;
-  
+  margin-left: 25px;
 }
 
 .header-photographer{
@@ -312,7 +328,7 @@ label {
   display: none;
 }
 
-.popularity-btn-opened ul {
+.popularity-btn-opened button {
   margin: 0;
   padding: 0px;
   list-style: none;
@@ -339,15 +355,20 @@ nav {
   position: relative;
   width: 1240px;
   margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 35px;
 }
 
-.sort-by button {
-  background-color: #901c1c;
-  color: white;
-  font-size: 20px;
-  font-weight: 600;
-  border: none;
+.sort-by{
+  padding: 0;
+border: none;
+background: none;
+color: white;
+    font-size: 22px;
+    font-weight: 600;
 }
+
+
 
 .sort-by-date,
 .sort-by-popu,
@@ -494,4 +515,9 @@ nav {
 .fa-chevron-right {
   font-size: 50px;
   color: #901c1c;
+}
+
+#sort-text{
+  font-weight: bold;
+  
 }

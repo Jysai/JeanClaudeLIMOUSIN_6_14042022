@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 let urlParams = new URLSearchParams(location.search);
 let idPhotographer = urlParams.get("id");
 const totalLikesPhotographer = document.querySelector(`#wish-count`);
@@ -63,7 +64,14 @@ async function displayDataMedia(medias) {
 document.querySelector("#sort-list-close").onclick = closeSortMenu;
 function closeSortMenu() {
   document.querySelector("#sort-list-open").style.display = "block";
+  
 }
+
+document.addEventListener("keyup", function (e) {
+if (e.key === "Escape") {
+  document.querySelector("#sort-list-open").style.display = "none";
+  }
+});
 
 document.querySelector("#sort-list-open").onclick = openSortMenu;
 function openSortMenu() {
@@ -113,6 +121,7 @@ window.onclick = (e) => {
   }
 }
 
+// eslint-disable-next-line no-unused-vars
 function like(id, likes) {
   const articlePhotographer = document.querySelector(
     `article[data-id="${id}"]`

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
 
@@ -8,20 +8,20 @@
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/d2186745d7.js" crossorigin="anonymous"></script>
-  
+
   <title>Fisheye - photographe </title>
 </head>
 
 <body>
 
   <header class="header-photographer">
-    <a href="/"><img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" /></a>
+    <a href="/"><img src="assets/images/logo.png" class="logo-media" alt="Fisheye Home page" /></a>
 
   </header>
 
-  <div id="bground" class="bground" >
+  <div id="bground" class="bground">
 
-    <div class="content " >
+    <div class="content ">
 
       <form name="reserve" class="reserve" method="get">
         <div class="header-contact">
@@ -31,25 +31,25 @@
         </div>
         <div>
           <label for="firstName">Prénom</label><br>
-          <input class="firstName" id="firstName" type="text" Role=Input alt="firstName"/>
+          <input class="firstName" id="firstName" type="text" Role=Input aria-label="firstName" />
           <p id="firstNameErrorMsg"></p>
         </div>
         <div>
           <label for="lastName">Nom</label><br>
-          <input class="lastName" id="lastName" type="text" Role=Input alt="lastname" />
+          <input class="lastName" id="lastName" type="text" Role=Input aria-label="lastName" />
           <p id="lastNameErrorMsg"></p>
         </div>
         <div>
           <label for="email">E-mail</label><br>
-          <input class="email" id="email" type="email" Role=Input alt="email" />
+          <input class="email" id="email" type="email" Role=Input aria-label="email" />
           <p id="emailErrorMsg"></p>
         </div>
         <div>
           <label for="message">Votre message</label><br>
-          <textarea class="message" id="message" type="text-area" Role=Input alt="Your message"> </textarea>
+          <textarea class="message" id="message" type="text-area" Role=Input aria-label="your message"> </textarea>
           <p id="messageErrorMsg"></p>
         </div>
-        <input class="btn-submit button" type="submit" id="btn-submit" value="Envoyer" alt="send" />
+        <input class="btn-submit button" type="submit" id="btn-submit" value="Envoyer" aria-label="send" />
       </form>
     </div>
 
@@ -59,11 +59,11 @@
 
     <div class="contentLightBox" aria-label="image closeup view">
 
-      <i class="fas solid fa-xmark close-light-box" onclick=closeLightBox() alt="close dialog"></i>
-      <i class="fas fa-chevron-left" id="left-btn" alt="previous img" ></i>
+      <em class="fas solid fa-xmark close-light-box" onclick=closeLightBox() aria-label="close dialog"></em>
+      <em class="fas fa-chevron-left" id="left-btn" aria-label="previous img"></em>
 
       <div class="mediaLightBox"></div>
-      <i class="fas fa-chevron-right" id="right-btn" alt="next img"></i>
+      <em class="fas fa-chevron-right" id="right-btn" aria-label="next img"></em>
 
       <h3 class="title-picture-modal">Test</h3>
     </div>
@@ -77,39 +77,36 @@
 
 
 
-    <div class="select-option ">
+    <div class="select-option">
       <span id="sort-text">Triez-par</span>
-      <button tabindex="1" id="sort-list-close" class="popularity-btn" role="listbox" aria-haspopup=”listbox”>
-        <span id="selected-filter">
-          <span id="text-choice">
-            <span id="text-choice-change">Date</span>
-            <span><i class="fas fa-chevron-down"></i></span>
-          </span>
+      <button  id="sort-list-close" class="popularity-btn">
+        <span id="text-choice">
+          <span id="text-choice-change">Date</span>
+          <em class="fas fa-chevron-down"></em>
+          
         </span>
       </button>
-      <nav id="sort-list-open" class="popularity-btn popularity-btn-opened" aria-labelledby="select-sort">
-        <ul>
-          <li class="sort-by">
-            <button tabindex="1" id="popularity-btn" class="sort-by-popu" data-order="popularity" value="popularite" role=”button”>
-              Popularité
-            </button>
-          </li>
-          <li class="sort-by">
-            <button tabindex="1" id="date-btn" class="sort-by-date" data-order="date" value="date" role=”button” >
-              Date
-            </button>
-          </li>
-          <li class="sort-by">
-            <button tabindex="1" id="title-btn" class="sort-by-title" data-order="title" value="titre" role=”button” >
-              Titre
-            </button>
-          </li>
-        </ul>
-      </nav>
+
+      <div id="sort-list-open" class="popularity-btn popularity-btn-opened"  aria-label="sort-articles" >
+        <em class="fas fa-chevron-up"></em>
+        <button id="popularity-btn" class="sort-by sort-by-popu" role="navigation"  aria-label="sort by popularity">
+          Popularité
+        </button>
+        <hr>
+        <button id="date-btn" class="sort-by sort-by-date" role="navigation" aria-label="sort-by-date">
+          Date
+        </button>
+        <hr>
+        <button id="title-btn" class="sort-by sort-by-title" role="navigation" aria-label="sort by title">
+          Titre
+        </button>
+       
+      </div>
+      
     </div>
 
     <section class="section-media">
-    </div>
+    </section>
     <div class="price-like-photographer">
       <div class="information-like-photographer">
         <span id="wish-count"></span><i class="fas fa-heart total-like-heart"></i>
@@ -117,7 +114,7 @@
       <div class="information-price-photographer">
         <span class="price-like"></span><span>€ / jour</span>
       </div>
-    </section>
+    </div>
   </main>
 
   <script src="scripts/utils/contactForm.js"></script>
@@ -125,6 +122,7 @@
 
   <script src="scripts/factories/Photographer.js"></script>
   <script src="scripts/factories/medias.js"></script>
+
 
   <script src="scripts/utils/lightBox.js"></script>
 
