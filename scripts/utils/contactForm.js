@@ -15,7 +15,7 @@ function closeModal() {
   modal.style.display = "none";
 }
 
-document.addEventListener("keyup", function (e) {
+document.addEventListener("keyup", function (e) { // permet de fermer le formulaire de contact avec la touche Echap du clavier
   if (e.key === "Escape") {
     closeModal()
     }
@@ -109,6 +109,7 @@ function validateEmail() {
   }
 }
 
+// Fonction avec plusieurs conditions qui permet de vérifier le contenu du message
 function validateMessage() {
   const messageErrorMsg = document.getElementById("messageErrorMsg");
   if (!message.value) {
@@ -128,7 +129,7 @@ function validateMessage() {
   }
 }
 
-
+// Fonction qui permet quand on clique sur le bouton d'envoyer les données du formulaire dans la console en vérifiant au préalable si tous les champs respectent les conditions
 BtnSubmit.addEventListener("click", function (ev) {
   ev.preventDefault();
 

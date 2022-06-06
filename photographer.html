@@ -59,12 +59,14 @@
 
     <div class="contentLightBox" aria-label="image closeup view">
 
-      <em class="fas solid fa-xmark close-light-box" onclick=closeLightBox() aria-label="close dialog"></em>
-      <em class="fas fa-chevron-left" id="left-btn" aria-label="previous img"></em>
+      <span class="close-light-box" onclick=closeLightBox() aria-label="close dialog"></span>
+  
+      <span aria-label="previous image" id="left-btn" ><</span>
+      <!-- <em class="fas fa-chevron-left" id="left-btn" aria-label="previous image"></em> -->
 
       <div class="mediaLightBox"></div>
-      <em class="fas fa-chevron-right" id="right-btn" aria-label="next img"></em>
-
+      <!-- <em  aria-label="next image" class="fas fa-chevron-right" id="right-btn"></em> -->
+      <span aria-label="next image" id="right-btn">></span>
       <h3 class="title-picture-modal">Test</h3>
     </div>
 
@@ -87,17 +89,17 @@
         </span>
       </button>
 
-      <div id="sort-list-open" class="popularity-btn popularity-btn-opened"  aria-label="sort-articles" >
+      <div id="sort-list-open" class="popularity-btn popularity-btn-opened" role="tablist"  aria-activedescendant="enter" aria-label="menu de sélection pour trier les articles"  >
         <em class="fas fa-chevron-up"></em>
-        <button id="popularity-btn" class="sort-by sort-by-popu" role="navigation"  aria-label="sort by popularity">
+        <button id="popularity-btn" class="sort-by sort-by-popu" role="tab"  aria-activedescendant="enter" aria-selected="false" aria-label="trier par popularité">
           Popularité
         </button>
         <hr>
-        <button id="date-btn" class="sort-by sort-by-date" role="navigation" aria-label="sort-by-date">
+        <button id="date-btn" class="sort-by sort-by-date" role="tab" aria-activedescendant="enter" aria-selected="true" aria-label="trier par date">
           Date
         </button>
         <hr>
-        <button id="title-btn" class="sort-by sort-by-title" role="navigation" aria-label="sort by title">
+        <button id="title-btn" class="sort-by sort-by-title" role="tab" aria-activedescendant="enter" aria-selected="false" aria-label="trier par titre">
           Titre
         </button>
        

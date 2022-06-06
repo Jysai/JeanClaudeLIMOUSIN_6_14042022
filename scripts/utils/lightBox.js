@@ -1,8 +1,8 @@
-const imageLightBox = document.querySelector(".mediaLightBox");
+const mediaLightBox = document.querySelector(".mediaLightBox");
 const titleLightBox = document.querySelector(".title-picture-modal");
 const modalLightBox = document.querySelector(".modalLightBox");
 
-function closeLightBox() {
+function closeLightBox() { // permet de fermet lighbox en cliquant sur la croix
   document.body.classList.remove("stop-scrolling");
   modalLightBox.style.display = "none";
 }
@@ -22,76 +22,69 @@ async function displayLightBox() {
       ".title-information-photo-video"
     ).innerHTML;
 
-    arrayPictur.push(srcPicturesPhotographer);
-    arrayTitle.push(titlePicturePhotographer);
 
     const articleDataID = articlePhotographer.getAttribute("data-id");
 
-    const getIdArticlePhotographer = document.querySelector(
+    const getArticlePhotographerWithId = document.querySelector(
       `article[data-id="${articleDataID}"]`
     );
 
-    const srcForModalLightBox = articlePhotographer
-      .querySelector(`.cliche-photographer`)
-      .getAttribute("src");
-
-    const titleModalLightBox = articlePhotographer.querySelector(
-      ".title-information-photo-video"
-    ).innerHTML;
+    arrayPictur.push(srcPicturesPhotographer);
+    arrayTitle.push(titlePicturePhotographer);
 
     const input =
-      getIdArticlePhotographer.querySelector(`.cliche-photographer`);
-    input.addEventListener("keypress", function (event) {
+    getArticlePhotographerWithId.querySelector(`.cliche-photographer`);
+    input.addEventListener("keypress", function (event) { // Permet d'ouvrir la lightbox avec la touche entrée du clavier
       if (event.key === "Enter") {
         displayModalLightBox();
       }
     });
 
-    getIdArticlePhotographer
+    getArticlePhotographerWithId
       .querySelector(`.cliche-photographer`)
       .addEventListener("click", displayModalLightBox);
 
-    function displayModalLightBox() {
+    function displayModalLightBox() { // Permet d'ouvrir la lightbox quand on clique sur l'image 
       modalLightBox.style.display = "flex";
 
       let indexUrl = arrayPictur.findIndex(
-        (image) => image === srcForModalLightBox
+        (image) => image === srcPicturesPhotographer
       );
 
       let indexTitle = arrayTitle.findIndex(
-        (title) => title === titleModalLightBox
+        (title) => title === titlePicturePhotographer
       );
 
-      if (srcForModalLightBox.includes("jpg")) {
-        imageLightBox.innerHTML = `<img src="${srcForModalLightBox}" class="media-photographer-lightbox" alt="${titleModalLightBox}">`;
+      if (srcPicturesPhotographer.includes("jpg")) {
+        mediaLightBox.innerHTML = `<img src="${srcPicturesPhotographer}" class="media-photographer-lightbox" alt="${titlePicturePhotographer}">`;
       } else {
-        console.log(srcForModalLightBox);
-        imageLightBox.innerHTML = `<video src="${srcForModalLightBox}" class="media-photographer-lightbox" alt="${titleModalLightBox}" controls>`;
+        console.log(srcPicturesPhotographer);
+        mediaLightBox.innerHTML = `<video src="${srcPicturesPhotographer}" class="media-photographer-lightbox" alt="${titlePicturePhotographer}" controls>`;
       }
-      titleLightBox.innerHTML = `${titleModalLightBox}`;
+      titleLightBox.innerHTML = `${titlePicturePhotographer}`;
 
-      function slideRight() {
+      function slideRight() { // Permet de changer d'image quand on clique sur la fléche droite
         if (indexUrl >= arrayPictur.length - 1) {
           indexUrl = 0;
           indexTitle = 0;
 
           if (arrayPictur[indexUrl].includes("mp4")) {
-            imageLightBox.innerHTML = `<video src="${arrayPictur[indexUrl]}" class="media-photographer-lightbox" alt="${arrayTitle[indexTitle]}" controls>`;
+            mediaLightBox.innerHTML = `<video src="${arrayPictur[indexUrl]}" class="media-photographer-lightbox" alt="${arrayTitle[indexTitle]}" controls>`;
           } else {
-            imageLightBox.innerHTML = `<img src="${arrayPictur[indexUrl]}" class="media-photographer-lightbox" alt="${arrayTitle[indexTitle]}">`;
+            mediaLightBox.innerHTML = `<img src="${arrayPictur[indexUrl]}" class="media-photographer-lightbox" alt="${arrayTitle[indexTitle]}">`;
           }
           titleLightBox.innerHTML = `${arrayTitle[indexTitle]}`;
 
           return;
         }
         if (arrayPictur[indexUrl + 1].includes("mp4")) {
-          imageLightBox.innerHTML = `<video src="${
+          mediaLightBox.innerHTML = `<video src="${
             arrayPictur[indexUrl + 1]
           }" class="media-photographer-lightbox"  alt="${
             arrayTitle[indexTitle + 1]
           }" controls>`;
         } else {
-          imageLightBox.innerHTML = `<img src="${
+          mediaLightBox.innerHTML = `<img src="${
             arrayPictur[indexUrl + 1]
           }" class="media-photographer-lightbox"  alt="${
             arrayTitle[indexTitle + 1]
@@ -103,26 +96,26 @@ async function displayLightBox() {
         indexTitle++;
       }
 
-      function slideLeft() {
+      function slideLeft() { // Permet de changer d'image quand on clique sur la fléche gauche
         if (indexUrl < 1) {
           indexUrl = arrayPictur.length - 1;
           indexTitle = arrayTitle.length - 1;
           if (arrayPictur[indexUrl].includes("mp4")) {
-            imageLightBox.innerHTML = `<video src="${arrayPictur[indexUrl]}" class="media-photographer-lightbox" alt="${arrayTitle[indexTitle]}" controls>`;
+            mediaLightBox.innerHTML = `<video src="${arrayPictur[indexUrl]}" class="media-photographer-lightbox" alt="${arrayTitle[indexTitle]}" controls>`;
           } else {
-            imageLightBox.innerHTML = `<img src="${arrayPictur[indexUrl]}" class="media-photographer-lightbox" alt="${arrayTitle[indexTitle]}">`;
+            mediaLightBox.innerHTML = `<img src="${arrayPictur[indexUrl]}" class="media-photographer-lightbox" alt="${arrayTitle[indexTitle]}">`;
           }
           titleLightBox.innerHTML = `${arrayTitle[indexTitle]}`;
           return;
         }
         if (arrayPictur[indexUrl - 1].includes("mp4")) {
-          imageLightBox.innerHTML = `<video src="${
+          mediaLightBox.innerHTML = `<video src="${
             arrayPictur[indexUrl - 1]
           }" class="media-photographer-lightbox" alt="${
             arrayTitle[indexTitle - 1]
           }" controls>`;
         } else {
-          imageLightBox.innerHTML = `<img src="${
+          mediaLightBox.innerHTML = `<img src="${
             arrayPictur[indexUrl - 1]
           }" class="media-photographer-lightbox" alt="${
             arrayTitle[indexTitle - 1]
@@ -136,11 +129,11 @@ async function displayLightBox() {
       leftBtn.addEventListener("click", slideLeft);
       rightBtn.addEventListener("click", slideRight);
       document.addEventListener("keyup", function (e) {
-        if (e.key === "ArrowLeft") {
+        if (e.key === "ArrowLeft") { // Permet de changer d'image avec la fleche gauche du clavier
           slideLeft();
-        } else if (e.key === "ArrowRight") {
+        } else if (e.key === "ArrowRight") { // Permet de changer d'image avec la fleche droite du clavier
           slideRight();
-        } else if (e.key === "Escape") {
+        } else if (e.key === "Escape") { // Permet de fermer la lightbox avec la touche echap
           closeLightBox();
         }
       });

@@ -4,12 +4,12 @@ function photographerFactory(data) {
 
   const picture = `assets/photographers/${portrait}`;
 
-  function getUserCardDOM() {
+  function getUserCardDOM() { // fonction qui permet d'afficher les informations des photographes sur la page d'accueil et de cliquer dessus pour être rediriger sur leur page
     const article = document.createElement("article");
 
     article.innerHTML = `
         <a href="photographer.html?id=${id}">
-        <div class="focus-photographer" aria-label="accéder au profil du photographe">
+        <div class="focus-photographer">
         <img src=${picture} class="profile-photographer" alt="${name}">
         <h2 class="">${name}</h2>
         </div>
@@ -23,7 +23,7 @@ function photographerFactory(data) {
     return article;
   }
 
-  function getMediaCardDOM() {
+  function getMediaCardDOM() { // fonction qui permet d'afficher les informations du photographe sur leur page et de le contacter
     const section = document.createElement("section");
  
     section.innerHTML = `

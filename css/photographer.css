@@ -1,5 +1,7 @@
 *{
   font-family: 'DM Sans', sans-serif;
+  box-sizing: content-box; 
+  margin: 0;
 }
 
 
@@ -19,8 +21,7 @@
   font-size: 20px;
   font-weight: bold;
   color: white;
-  padding: 11px;
-  width: 170px;
+   width: 170px;
   height: 70px;
   border: none;
   background-color: #901c1c;
@@ -31,7 +32,9 @@
 .contact_button:hover{
   background-color: #DB8876
 }
-
+.contact_button:focus-visible{
+  background-color: #DB8876
+}
 .profile-photographer {
   height: 200px;
   width: 200px;
@@ -329,8 +332,7 @@ label {
 }
 
 .popularity-btn-opened button {
-  margin: 0;
-  padding: 0px;
+
   list-style: none;
   width: 100%;
 }
@@ -389,7 +391,8 @@ color: white;
   margin-top: 15px;
 }
 .sort-by-date {
-  margin: 15px 0 15px 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 /* Lightbox */
@@ -441,6 +444,11 @@ color: white;
   display: none;
   justify-content: center;
   align-items: center;
+}
+#left-btn, #right-btn{
+  color: #901c1c;
+  font-size: 82px;
+  cursor: pointer;
 }
 
 #modalLightBox {
@@ -500,7 +508,7 @@ color: white;
 .title-picture-modal {
   position: absolute;
   left: 60px;
-  bottom: -40px;
+  bottom: 0px;
   font-size: 24px;
   color: #901c1c;
 }
