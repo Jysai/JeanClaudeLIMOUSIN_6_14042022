@@ -61,9 +61,15 @@ async function displayDataMedia(medias) {
   }
 }
 
-document.querySelector("#sort-list-close").onclick = closeSortMenu; // Permet d'afficher les options pour trier les médias
-function closeSortMenu() {
-  document.querySelector("#sort-list-open").style.display = "block";  
+
+
+
+document.querySelector("#sort-list-close").onclick = openSortMenu; // Permet d'afficher les options pour trier les médias
+
+function openSortMenu() {
+  document.querySelector("#sort-list-open").style.display = "block"; 
+  document.getElementById("popularity-btn").focus();
+  
 }
 
 document.addEventListener("keyup", function (e) { // Ferme le menu qui permet de trier les medias quand on appuie sur la touche Echap du clavier

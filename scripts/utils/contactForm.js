@@ -1,11 +1,19 @@
 const modal = document.getElementById("bground");
+const firstName = document.querySelector("#firstName");
+const lastName = document.querySelector("#lastName");
+const email = document.querySelector("#email");
+const message = document.querySelector("#message");
 
+const formReset = document.querySelector(".reserve");
+
+const BtnSubmit = document.getElementById("btn-submit");
 
 
 
 // eslint-disable-next-line no-unused-vars
 function displayModal() {
   modal.style.display = "flex";
+  firstName.select()
 }
 
 
@@ -24,14 +32,7 @@ document.addEventListener("keyup", function (e) { // permet de fermer le formula
 
 
 
-const firstName = document.querySelector("#firstName");
-const lastName = document.querySelector("#lastName");
-const email = document.querySelector("#email");
-const message = document.querySelector("#message");
 
-const formReset = document.querySelector(".reserve");
-
-const BtnSubmit = document.getElementById("btn-submit");
 
 const regName =
   /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/;

@@ -6,6 +6,7 @@ function photographerFactory(data) {
 
   function getUserCardDOM() { // fonction qui permet d'afficher les informations des photographes sur la page d'accueil et de cliquer dessus pour être rediriger sur leur page
     const article = document.createElement("article");
+    const section = document.createElement("section")
 
     article.innerHTML = `
         <a href="photographer.html?id=${id}">
@@ -18,9 +19,12 @@ function photographerFactory(data) {
         <span class="city-photographer">${city}, ${country} </span>
         <span class="tagline-photographer">${tagline}</span>
         <span class="price-photographer">${price}€/jour</span>
-        </div>`;
+        </div>
+        `;
 
-    return article;
+    section.appendChild(article)    
+
+    return article, section;
   }
 
   function getMediaCardDOM() { // fonction qui permet d'afficher les informations du photographe sur leur page et de le contacter

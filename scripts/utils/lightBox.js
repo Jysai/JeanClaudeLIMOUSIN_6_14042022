@@ -10,7 +10,7 @@ async function displayLightBox() {
   const articlesPhotographer = document.querySelectorAll(`article`);
   const rightBtn = document.getElementById("right-btn");
   const leftBtn = document.getElementById("left-btn");
-
+  
   const arrayTitle = [];
   const arrayPictur = [];
 
@@ -46,7 +46,7 @@ async function displayLightBox() {
 
     function displayModalLightBox() { // Permet d'ouvrir la lightbox quand on clique sur l'image 
       modalLightBox.style.display = "flex";
-
+     
       let indexUrl = arrayPictur.findIndex(
         (image) => image === srcPicturesPhotographer
       );

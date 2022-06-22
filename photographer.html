@@ -13,7 +13,7 @@
 </head>
 
 <body>
-
+  
   <header class="header-photographer">
     <a href="/index.html"><img src="assets/images/logo.png" class="logo-media" alt="Fisheye Home page" /></a>
 
@@ -23,7 +23,7 @@
 
     <div class="content ">
 
-      <form name="reserve" class="reserve" method="get">
+      <form name="reserve" class="reserve" method="get" >
         <div class="header-contact">
           <span class="close" onclick=closeModal() alt="Close contact form"></span>
           <h2 class="contact-me">Contactez-moi</h2>
@@ -81,7 +81,7 @@
 
     <div class="select-option">
       <span id="sort-text">Triez-par</span>
-      <button  id="sort-list-close" class="popularity-btn">
+      <button  id="sort-list-close" class="popularity-btn"  aria-label="menu de sélection pour trier les articles">
         <span id="text-choice">
           <span id="text-choice-change">Date</span>
           <em class="fas fa-chevron-down"></em>
@@ -89,17 +89,17 @@
         </span>
       </button>
 
-      <div id="sort-list-open" class="popularity-btn popularity-btn-opened" role="tablist"  aria-activedescendant="enter" aria-label="menu de sélection pour trier les articles"  >
+      <div id="sort-list-open" class="popularity-btn popularity-btn-opened" role="tablist"  aria-activedescendant="enter"  >
         <em class="fas fa-chevron-up"></em>
-        <button id="popularity-btn" class="sort-by sort-by-popu" role="tab"  aria-activedescendant="enter" aria-selected="false" aria-label="trier par popularité">
+        <button id="popularity-btn" class="sort-by sort-by-popu" role="tab"  aria-activedescendant="enter"  aria-label="trier par popularité">
           Popularité
         </button>
         <hr>
-        <button id="date-btn" class="sort-by sort-by-date" role="tab" aria-activedescendant="enter" aria-selected="true" aria-label="trier par date">
+        <button id="date-btn" class="sort-by sort-by-date" role="tab" aria-activedescendant="enter"  aria-label="trier par date">
           Date
         </button>
         <hr>
-        <button id="title-btn" class="sort-by sort-by-title" role="tab" aria-activedescendant="enter" aria-selected="false" aria-label="trier par titre">
+        <button id="title-btn" class="sort-by sort-by-title" role="tab" aria-activedescendant="enter"  aria-label="trier par titre">
           Titre
         </button>
        
@@ -107,7 +107,7 @@
       
     </div>
 
-    <section class="section-media">
+    <section class="section-media" >
     </section>
     <div class="price-like-photographer">
       <div class="information-like-photographer">
