@@ -4,7 +4,7 @@
 body {
     font-family: "DM Sans", sans-serif;
     margin: 0 auto;
-    min-width: 1080px;
+    width: 1350px;
     text-decoration: none;
 }
 
@@ -59,11 +59,12 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 90px;
+    margin: 0 50px;
 }
 
 h1 {
     color: #901C1C;
-    margin-right: 100px;
+    
 }
 
 .logo {
