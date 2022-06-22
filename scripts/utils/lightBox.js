@@ -46,7 +46,7 @@ async function displayLightBox() {
 
     function displayModalLightBox() { // Permet d'ouvrir la lightbox quand on clique sur l'image 
       modalLightBox.style.display = "flex";
-     
+      document.querySelector(".close-light-box").focus();
       let indexUrl = arrayPictur.findIndex(
         (image) => image === srcPicturesPhotographer
       );
@@ -67,7 +67,7 @@ async function displayLightBox() {
         if (indexUrl >= arrayPictur.length - 1) {
           indexUrl = 0;
           indexTitle = 0;
-
+        
           if (arrayPictur[indexUrl].includes("mp4")) {
             mediaLightBox.innerHTML = `<video src="${arrayPictur[indexUrl]}" class="media-photographer-lightbox" alt="${arrayTitle[indexTitle]}" controls>`;
           } else {
@@ -91,7 +91,7 @@ async function displayLightBox() {
           }">`;
         }
         titleLightBox.innerHTML = `${arrayTitle[indexTitle + 1]}`;
-
+        
         indexUrl++;
         indexTitle++;
       }

@@ -452,6 +452,8 @@ color: white;
   color: #901c1c;
   font-size: 82px;
   cursor: pointer;
+  border: none;
+background: none;
 }
 
 #modalLightBox {
@@ -486,11 +488,15 @@ color: white;
   position: absolute;
   right: 5px;
   top: 25px;
-  width: 42px;
-  height: 42px;
+  width: 22px;
+  height: 37px;
   font-size: 50px;
   opacity: 1;
   cursor: pointer;
+  display: flex;
+ 
+border: none;
+background: none;
 }
 .close-light-box:before,
 .close-light-box:after {
@@ -500,6 +506,7 @@ color: white;
   height: 42px;
   width: 3px;
   background-color: #901c1c;
+  
 }
 .close-light-box:before {
   transform: rotate(45deg);
@@ -526,6 +533,7 @@ color: white;
 .fa-chevron-right {
   font-size: 50px;
   color: #901c1c;
+  
 }
 
 #sort-text{
